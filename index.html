@@ -18,18 +18,18 @@
                         
                         <form id="calculo-form">
                             <div class="mb-3">
-                                <label for="salario-antigo" class="form-label">Salário na Emprel:</label>
-                                <input type="number" class="form-control" id="salario-antigo" placeholder="Ex: 5000" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="salario-atual" class="form-label">Salário na nova empresa:</label>
-                                <input type="number" class="form-control" id="salario-atual" placeholder="Ex: 4000" required>
+                                <label for="salario-antigo" class="form-label">Salário líquido na Emprel:</label>
+                                <input type="number" class="form-control" id="salario-antigo" value="10934.73" readonly>
                             </div>
 
                             <div class="mb-3">
                                 <label for="mes-saida" class="form-label">Mês de saída da Emprel:</label>
-                                <input type="month" class="form-control" id="mes-saida" required>
+                                <input type="text" class="form-control" id="mes-saida" value="Mar/2024" readonly>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="salario-atual" class="form-label">Salário na nova empresa:</label>
+                                <input type="number" class="form-control" id="salario-atual" value="6570.55">
                             </div>
 
                             <div class="d-grid">
@@ -49,9 +49,9 @@
 
     <script>
         function calcularPerda() {
-            const salarioAntigo = parseFloat(document.getElementById('salario-antigo').value);
+            const salarioAntigo = 10934.73;
             const salarioAtual = parseFloat(document.getElementById('salario-atual').value);
-            const mesSaida = new Date(document.getElementById('mes-saida').value);
+            const mesSaida = new Date('2024-03-01');
             const hoje = new Date();
 
             const meses = (hoje.getFullYear() - mesSaida.getFullYear()) * 12 + (hoje.getMonth() - mesSaida.getMonth());
@@ -60,6 +60,11 @@
 
             document.getElementById('resultado').textContent = `Thiago perdeu R$ ${perdaAcumulada.toFixed(2)} desde que saiu da Emprel.`;
         }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            calcularPerda();
+        });
+
     </script>
 </body>
 </html>
