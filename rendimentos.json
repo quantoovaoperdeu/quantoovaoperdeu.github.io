@@ -1,0 +1,12 @@
+{
+    "emprel": {
+        "rendimentos": [
+            { "mes": "3", "ano": "2024", "liquido": 10934.73 }
+        ]
+    },
+    "serpro": {
+        "rendimentos": [
+            { "mes": "3", "ano": "2024", "liquido": 6570.55 }
+        ]
+    }
+}
